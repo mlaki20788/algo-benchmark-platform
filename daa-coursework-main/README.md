@@ -50,30 +50,27 @@ daa-coursework/
 * **Benchmark Iterations:** 2,000,000 queries
 
 ### Benchmark Output
-
 ```text
-==================================================================================================
-                    SEARCH ALGORITHMS BENCHMARK REPORT BY MAHDI LAK
-                    Dataset Size: 10,000,000 Sorted Elements (32-bit int)
-==================================================================================================
+##################################################################################################
+               ALGORITHMIC BENCHMARK & COMPLEXITY SUITE | MAHDI LAKI
+               Workload Scale: 10,000,000 Keys (Int32 Array)
+##################################################################################################
 
-[1] FUNCTIONAL EQUIVALENCE AUDIT
-     Status: PASSED (100% Match across 100,000 random queries)
+[*] EQUIVALENCE VERIFICATION CHECK
+    Outcome: SUCCESS (Identical results over 100,000 queries)
 
-[2] PERFORMANCE & SPACE COMPLEXITY COMPARISON MATRIX
-┌───────────────────────────┬───────────────────┬───────────────────┬───────────────────┬──────────────────────┐
-│ Algorithm                 │ Latency (ns/op)   │ Throughput (ops/s)│ Exec Time (ms)    │ Auxiliary Memory     │
-├───────────────────────────┼───────────────────┼───────────────────┼───────────────────┼──────────────────────┤
-│ Classic Binary Search     │            421.74 │         2,371,145 │            843.47 │       0 B (In-Place) │
-│ SIMD AVX2 S-Tree Search   │            116.42 │         8,589,604 │            232.84 │             38.15 MB │
-└───────────────────────────┴───────────────────┴───────────────────┴───────────────────┴──────────────────────┘
+[*] BENCHMARK METRICS (TIME & MEMORY)
++---------------------------+-------------------+-------------------+-------------------+----------------------+
+| Target Algorithm          | Latency (ns)      | Rate (ops/sec)    | Duration (ms)     | Memory Allocation    |
++---------------------------+-------------------+-------------------+-------------------+----------------------+
+| Classic Binary Search     |            421.74 |         2,371,145 |            843.47 |     Zero Alloc (0 B) |
+| SIMD AVX2 S-Tree Search   |            116.42 |         8,589,604 |            232.84 |             38.15 MB |
++---------------------------+-------------------+-------------------+-------------------+----------------------+
 
- SPEEDUP FACTOR: SIMD AVX2 S-Tree Search is 3.62x FASTER than Classic Binary Search.
+[*] ANALYSIS: SIMD AVX2 S-Tree Search performs 3.62x faster compared to Classic Binary Search.
 
-==================================================================================================
-
+##################################################################################################
 ```
-
 ### Technical Analysis
 
 * **Performance Gains:** The SIMD AVX2 S-Tree Search achieved a **3.62x throughput increase** over Classic Binary Search, reducing average query latency from 421.74 ns to 116.42 ns per operation.
